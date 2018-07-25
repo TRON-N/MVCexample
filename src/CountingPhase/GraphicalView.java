@@ -47,7 +47,4 @@ public class GraphicalView {
         });
     }
 
-    public String getType() {
-        return "gui";
-    }
 }

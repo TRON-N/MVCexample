@@ -13,13 +13,9 @@ public class CommandLineView {
         this.run();
     }
 
-    public String getType() {
-        return "cl";
-    }
-
     public void run() {
-        System.out.println("Command Line View!!\n\n");
-        System.out.println(viewController.getValue());
+        System.out.println("Command Line View!!\n");
+        System.out.println("Total : " + viewController.getValue());
 
         Scanner scanner = new Scanner(System.in);
         while(scanner.hasNextLine()) {
@@ -27,7 +23,7 @@ public class CommandLineView {
 
             if (input.equals("update")) {
                 viewController.update();
-                System.out.println(viewController.getValue());
+                System.out.println("Total : " + viewController.getValue());
             }
 
             if (input.equals("gui")) {

@@ -31,6 +31,5 @@ public class Model {
         } else {
             this.viewType = "cli";
         }
-        System.out.println(this.viewType);
     }
 }
