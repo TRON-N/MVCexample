@@ -2,11 +2,11 @@ package CountingPhase;
 
 import java.util.Scanner;
 
-public class CommandLineView {
-    private Controller viewController;
+public class CommandLineViewCountingPhase {
+    private ControllerCountingPhase controller;
 
-    public CommandLineView(Controller controller) {
-        viewController = controller;
+    public CommandLineViewCountingPhase(ControllerCountingPhase controllerCountingPhase) {
+        controller = controllerCountingPhase;
     }
 
     public void display() {
@@ -15,19 +15,24 @@ public class CommandLineView {
 
     public void run() {
         System.out.println("Command Line View!!\n");
-        System.out.println("Total : " + viewController.getValue());
+        System.out.println("Total : " + controller.getValue());
 
         Scanner scanner = new Scanner(System.in);
         while(scanner.hasNextLine()) {
             String input = scanner.nextLine();
 
             if (input.equals("update")) {
-                viewController.update();
-                System.out.println("Total : " + viewController.getValue());
+                controller.update();
+                System.out.println("Total : " + controller.getValue());
             }
 
             if (input.equals("gui")) {
-                viewController.changeUI();
+                controller.changeUI();
+                break;
+            }
+
+            if (input.equals("change")) {
+                controller.changePhase();
                 break;
             }
 

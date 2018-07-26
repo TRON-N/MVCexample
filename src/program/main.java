@@ -1,15 +1,15 @@
 package program;
 
-import CountingPhase.CommandLineView;
-import CountingPhase.Controller;
-import CountingPhase.GraphicalView;
+import CountingPhase.ControllerCountingPhase;
+import CountingPhase.GraphicalViewCountingPhase;
 
 public class main {
 
     public static void main(String[] args) {
 
-        Model model = new Model(0, "gui");
-        Controller controller = new Controller(model);
-        new GraphicalView(controller).display();
+        Model model = new Model(0);
+        DisplayModel dispModel = new DisplayModel(model, "gui");
+        dispModel.showInterface();
+
     }
 }

@@ -1,16 +1,12 @@
 package program;
 
-import CountingPhase.CommandLineView;
-import CountingPhase.Controller;
-import CountingPhase.GraphicalView;
-
 public class Model {
     private int value = 0;
-    private String viewType;
+    private String phase;
 
-    public Model(int startingValue, String viewType) {
+    public Model(int startingValue) {
         this.value = startingValue;
-        this.viewType = viewType;
+        this.phase = "count";
     }
 
     public void increaseValue() {
@@ -21,15 +17,14 @@ public class Model {
         return this.value;
     }
 
-    public String getViewType() {
-        return this.viewType;
+    public String getPhase() {
+        return this.phase;
     }
 
-    public void changeViewType() {
-        if (this.viewType.equals("cli")) {
-            this.viewType = "gui";
-        } else {
-            this.viewType = "cli";
-        }
+    public void changePhase() {
+        if (this.phase.equals("disp"))
+            this.phase = "count";
+        else
+            this.phase = "disp";
     }
 }
